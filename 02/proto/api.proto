@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option go_package = "./;proto";
+
+// 结构体
+message CallRequest {
+    string name = 1;
+}
+
+message CallResponse {
+    string message = 2;
+}
+
+// 接口
+service Example {
+    rpc Call(CallRequest) returns (CallResponse) {};
+}
+
+// 结构体
+message EmptyRequest {
+}
+
+message EmptyResponse {
+}
+
+service Foo {
+    rpc Bar(EmptyRequest) returns (EmptyResponse) {};
+}

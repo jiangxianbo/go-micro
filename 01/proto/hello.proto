@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package="./;proto";
+
+// 结构体
+message InfoRequest {
+    string username = 1;
+}
+
+message InfoResponse {
+    string msg = 2;
+}
+
+// 接口
+service Hello {
+    rpc Info(InfoRequest) returns (InfoResponse) {}
+}
